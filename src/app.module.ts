@@ -14,15 +14,21 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { APP_GUARD } from '@nestjs/core';
 import { AuthGuard } from './guard/auth.guard';
+import { RolesGuard } from './guard/roles.guard';
 
 @Module({
     imports: [PrismaModule, ProductsModule, AuthModule, UsersModule],
     controllers: [AppController],
-    providers: [AppService,
+    providers: [
+        AppService,
         {
             provide: APP_GUARD,
-            useClass: AuthGuard
-        }
+            useClass: AuthGuard,
+        },
+        {
+            provide: APP_GUARD,
+            useClass: RolesGuard,
+        },
     ],
 })
 export class AppModule implements NestModule {
