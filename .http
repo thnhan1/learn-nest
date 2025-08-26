@@ -75,7 +75,7 @@ GET http://localhost:3000/user HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiam9obiIsImlhdCI6MTc1NjE5MDk0MywiZXhwIjoxNzU2MTkxMDAzfQ.x-9IO4xraBmpcY5AMnb364tF-XRItaYfwCTqQFzPTDs
 
 ### 9. login
-post http://localhost:3000/auth/login
+POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
