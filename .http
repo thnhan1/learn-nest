@@ -1,0 +1,88 @@
+POST http://localhost:3000/books/demo
+Content-Type: application/json
+
+{
+  "ok": false
+}
+
+###
+
+GET http://localhost:3000/books/2021a HTTP/1.1
+
+
+### get all books
+GET http://localhost:3000/books HTTP/1.1
+
+### create book
+POST http://localhost:3000/books HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "New Book",
+  "author": "Author Name",
+  "year": 2021
+}
+
+### date str pipe
+POST http://localhost:3000/demos/2021-01-01 HTTP/1.1
+Content-Type: application/json
+
+{
+  "dateStr": "2021-01-01"
+}
+
+
+### create rpoduct
+POST http://localhost:3000/products HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "            lll      ",
+  "price": 9.99,
+  "description": "This is a new product"
+}
+
+### 2. get all products filter
+GET http://localhost:3000/products?page=2&limit=3&activeOnly=true
+
+### 3. get product by id
+GET http://localhost:3000/products/8
+
+
+### 4. update product
+PATCH http://localhost:3000/products/0
+Content-Type: application/json
+
+{
+  "name": "New Name",
+  "price": 12.99,
+  "description": "This is a new product"
+}
+
+### 5. delete product 
+DELETE http://localhost:3000/products/9
+
+### 6. search products
+GET http://localhost:3000/products/search?ids=1,2,90
+role: admin
+
+### 7. get admin info
+GET http://localhost:3000/admin HTTP/1.1
+
+
+### 8. user 
+GET http://localhost:3000/user HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiam9obiIsImlhdCI6MTc1NjE5MDk0MywiZXhwIjoxNzU2MTkxMDAzfQ.x-9IO4xraBmpcY5AMnb364tF-XRItaYfwCTqQFzPTDs
+
+### 9. login
+post http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "john",
+  "password": "changeme"
+}
+
+### 10. get profile
+GET http://localhost:3000/auth/profile HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiam9obiIsImlhdCI6MTc1NjE5MDk0MywiZXhwIjoxNzU2MTkxMDAzfQ.x-9IO4xraBmpcY5AMnb364tF-XRItaYfwCTqQFzPTDs
